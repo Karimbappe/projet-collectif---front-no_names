@@ -1,12 +1,15 @@
 import React from 'react';
 import TodoList from './TodoList'
-import Aside from './Aside'
+import Carousel from './Carousel'
+import Main from './Main'
+
 
 function App() {
 return (
   <>
     <TodoList />
-    <Aside />
+    <Carousel />
+    <Main />
   </>
 	
   

@@ -28,15 +28,7 @@ body {
   color: white;
 }
 
-.aside {
-  display:flex;
-  flex-direction: column;
-  background-color: #b6371a;
-  color: #f2ede0;
-  width: 6rem;
-  height: 1000px;
 
-}
 
 .aside a {
   text-decoration: none;

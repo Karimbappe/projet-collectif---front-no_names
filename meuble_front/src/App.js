@@ -1,5 +1,5 @@
 import React from 'react';
-import TodoList from './TodoList'
+import Navbar from './Navbar'
 import Carousel from './Carousel'
 import Main from './Main'
 
@@ -7,7 +7,7 @@ import Main from './Main'
 function App() {
 return (
   <>
-    <TodoList />
+    <Navbar />
     <Carousel />
     <Main />
   </>

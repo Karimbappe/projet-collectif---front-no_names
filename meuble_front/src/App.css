@@ -106,10 +106,12 @@ body {
   height: 30px;
 }
 
-
-
-
-
-
-
-
+.signInContent {
+  width: 250px;
+  height: 310px;
+  align-items: center;
+  justify-content: center;
+  top: 30vh;
+  left: 30vh;
+  border: 5px solid #8b3c19;
+}

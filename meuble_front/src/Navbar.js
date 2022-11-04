@@ -1,9 +1,9 @@
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
 function NavScrollExample() {
   return (
@@ -24,12 +24,11 @@ function NavScrollExample() {
             <Nav.Link href="#action1">Home</Nav.Link>
             <Nav.Link href="#action2">Products</Nav.Link>
             <NavDropdown title="Inscription" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Sign in</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
+              <NavDropdown.Item href="/#/sign-in">Sign in</NavDropdown.Item>
+							<NavDropdown.Item href="/#/sign-Up">Sign up</NavDropdown.Item>
                 Sign up
-              </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
+              <NavDropdown.Item href="#action3">
                 Forgot your password
               </NavDropdown.Item>
             </NavDropdown>

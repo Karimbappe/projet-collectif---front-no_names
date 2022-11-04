@@ -1,14 +1,14 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-useEffect(() => {
-  // GET request using fetch inside useEffect React hook
-  fetch('http://localhost:8000/api/product')
-      .then(response => response.json())
-      .then(data => setTotalReactPackages(data.total));
+// useEffect(() => {
+//   // GET request using fetch inside useEffect React hook
+//   fetch('http://localhost:8000/api/product')
+//       .then(response => response.json())
+//       .then(data => setTotalReactPackages(data.total));
 
 // empty dependency array means this effect will only run once (like componentDidMount in classes)
-}, []);
+// }, []);
 
 function BasicExample() {
   return (

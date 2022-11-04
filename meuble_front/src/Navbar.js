@@ -9,7 +9,11 @@ function NavScrollExample() {
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#">NO NAME</Navbar.Brand>
+        <Navbar.Brand href="#"><img
+            className="logo"
+            src="/img/Capture d’écran 2022-11-02 à 17.21.17.png"
+            alt="First slide"
+        /></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -18,7 +22,7 @@ function NavScrollExample() {
             navbarScroll
           >
             <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Product</Nav.Link>
+            <Nav.Link href="#action2">Products</Nav.Link>
             <NavDropdown title="Inscription" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Sign in</NavDropdown.Item>
               <NavDropdown.Item href="#action4">

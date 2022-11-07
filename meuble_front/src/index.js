@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import SignIn from "./signIn";
 import SignUp from "./signUp"
 import {HashRouter, Routes, Route} from "react-router-dom";
+import Product from "./Product";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -15,6 +16,7 @@ root.render(
 			<Routes>
 				<Route index element={<App />} />
         {/* rajouter autant de "Route path" en les assignants a leurs fichier dans le dossier "src" */}
+				<Route path="/Product" element={<Product />} />
 				<Route path="/sign-in" element={<SignIn />} />
 				<Route path="/sign-up" element={<SignUp />} /> 
 			</Routes>

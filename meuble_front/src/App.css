@@ -14,7 +14,7 @@ body {
 
 .topnav a {
   float: left;
-  color: #f2ede0;
+  color: #f3f3f3;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -43,6 +43,29 @@ body {
   grid-template-columns: 3fr 3fr 3fr;
   gap: 5rem;
   padding: 5rem;
+}
+
+.cards_content{
+  width: auto;
+  height: auto;
+}
+
+.gridable{
+  display: contents;
+}
+
+.p-card
+
+.gridable img{
+  object-fit: cover;
+  width: 100%;
+}
+
+.cards_content:hover{
+  -ms-transform: scale(1.02);
+  -webkit-transform: scale(1.5);
+  transform: scale(1.02);
+  cursor: pointer;
 }
 
 

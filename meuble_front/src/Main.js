@@ -1,6 +1,6 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import axios from "axios";
+//import axios from "axios";
 import {useEffect, useState} from "react";
 
 function One() {
@@ -11,17 +11,6 @@ function One() {
 		// .then((response) => response.json())
 		// .then((data) => (setData = data));
 	}
-
-	async function fetchData() {
-		const result = await axios(getFetchUrl());
-		setData(result.data);
-	}
-
-	useEffect(() => {
-		// GET request using fetch inside useEffect React hook
-		fetchData();
-		// empty dependency array means this effect will only run once (like componentDidMount in classes)
-	}, []);
 
 	function BasicExample() {
 		return function showProducts(data) {

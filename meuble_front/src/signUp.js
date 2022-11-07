@@ -2,9 +2,20 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import CheckBox from "./checkBox";
+import {useState} from "react";
+
+const initFormData = Object.freeze({
+	firstname: "",
+	surname: "",
+	email: "",
+	birthDate: "",
+	password: "",
+	interest: [],
+});
 
 function SignUp() {
+	// le procede est ici le meme a suivre que dans dans signIn pour recuperer les donne formulaire, attention a comment gerer les donnees checkbox, ici un tableau a vous de tester, faut-il hash le password en front ou en back?
+
 	return (
 		<>
 			<Navbar />
@@ -39,7 +50,13 @@ function SignUp() {
 
 				<Form.Text>Choose your type</Form.Text>
 
-				<CheckBox />
+				<Form.Check inline label="Table" name="group1" />
+				<Form.Check inline label="Chair" name="group1" />
+				<Form.Check inline label="Sofa" name="group1" />
+				<Form.Check inline label="Bed" name="group1" />
+				<Form.Check inline label="Cupboard" name="group1" />
+				<Form.Check inline label="Wardrobe" name="group1" />
+				<Form.Check inline label="Other" name="group1" />
 
 				<Button variant="primary" type="submit">
 					Push to complete

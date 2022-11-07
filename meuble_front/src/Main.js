@@ -1,34 +1,45 @@
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import axios from "axios";
+import {useEffect, useState} from "react";
 
-// useEffect(() => {
-//   // GET request using fetch inside useEffect React hook
-//   fetch('http://localhost:8000/api/product')
-//       .then(response => response.json())
-//       .then(data => setTotalReactPackages(data.total));
+function One() {
+	const [noData, fullData] = useState("react");
 
-// empty dependency array means this effect will only run once (like componentDidMount in classes)
-// }, []);
+	function getFetchUrl() {
+		return "https://random-data-api.com/api/address/random_address" + noData;
+		// .then((response) => response.json())
+		// .then((data) => (setData = data));
+	}
 
-function BasicExample() {
-  return (
-      function showProducts(data){
-  document.querySelector('root').innerHTML=" " 
-  var productInfoString = ""
-  for(let i=0; i<data.length; i++) {
-      let id = data[i].show.id;
-      let name = data[i].name;
-      let image = data[i].image;
-      let category = data[i].category;
-      let size = data[i].size;
-      let color = data[i].color;
-      let price = data[i].price;
-      let inStock = data[i].inStock;
-      let ratings = data[i].ratings;
-      let reviews = data[i].reviews;
+	async function fetchData() {
+		const result = await axios(getFetchUrl());
+		setData(result.data);
+	}
 
-      
-      let showProductsInfo =`
+	useEffect(() => {
+		// GET request using fetch inside useEffect React hook
+		fetchData();
+		// empty dependency array means this effect will only run once (like componentDidMount in classes)
+	}, []);
+
+	function BasicExample() {
+		return function showProducts(data) {
+			document.querySelector("root").innerHTML = " ";
+			var productInfoString = "";
+			for (let i = 0; i < data.length; i++) {
+				let id = data[i].show.id;
+				let name = data[i].name;
+				let image = data[i].image;
+				let category = data[i].category;
+				let size = data[i].size;
+				let color = data[i].color;
+				let price = data[i].price;
+				let inStock = data[i].inStock;
+				let ratings = data[i].ratings;
+				let reviews = data[i].reviews;
+
+				let showProductsInfo = `
       <div className='cards_container'>
       <div className='cards_content'>
       <Card style={{ width: '18rem' }}>
@@ -43,11 +54,11 @@ function BasicExample() {
       </Card.Body>
     </Card>
   </div>
-  </div>`
-  }
-  document.querySelector('.container').innerHTML += productInfoString
-    } 
-  );
+  </div>`;
+			}
+			document.querySelector(".container").innerHTML += productInfoString;
+		};
+	}
 }
 
-export default BasicExample;
+export default One;

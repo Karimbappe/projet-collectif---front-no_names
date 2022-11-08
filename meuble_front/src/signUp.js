@@ -1,70 +1,73 @@
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import {useState} from "react";
-
-const initFormData = Object.freeze({
-	firstname: "",
-	surname: "",
-	email: "",
-	birthDate: "",
-	password: "",
-	interest: [],
-});
+import React from 'react';
+import {
+  MDBBtn,
+  MDBContainer,
+  MDBRow,
+  MDBCol,
+  MDBCard,
+  MDBCardBody,
+  MDBCardImage,
+  MDBInput,
+  MDBIcon,
+  MDBCheckbox
+}
+from 'mdb-react-ui-kit';
+import Navbar from './Navbar'
+import Footer from './Footer'
 
 function SignUp() {
-	// le procede est ici le meme a suivre que dans dans signIn pour recuperer les donne formulaire, attention a comment gerer les donnees checkbox, ici un tableau a vous de tester, faut-il hash le password en front ou en back?
+  return (
+	<>
+	<Navbar />
+    <MDBContainer fluid>
+	
+      <MDBCard className='text-black m-5' style={{borderRadius: '25px'}}>
+        <MDBCardBody>
+          <MDBRow>
+            <MDBCol md='10' lg='6' className='order-2 order-lg-1 d-flex flex-column align-items-center'>
 
-	return (
-		<>
-			<Navbar />
-			<Form>
-				<Form.Group className="mb-3" controlId="formBasicFirstName">
-					<Form.Control type="FirstName" placeholder="First name" />
-					<Form.Text className="text-muted"></Form.Text>
-				</Form.Group>
+              <p classNAme="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
 
-				<Form.Group className="mb-3" controlId="formBasicSurName">
-					<Form.Control type="SurName" placeholder="Surname" />
-				</Form.Group>
+              <div className="d-flex flex-row align-items-center mb-4 ">
+                <MDBIcon fas icon="user me-3" size='lg'/>
+                <MDBInput label='Votre Nom' id='form1' type='text' className='w-100'/>
+              </div>
 
-				<Form.Group className="mb-3" controlId="formBasicemail">
-					<Form.Control type="Email" placeholder="Email" />
-				</Form.Group>
+              <div className="d-flex flex-row align-items-center mb-4">
+                <MDBIcon fas icon="envelope me-3" size='lg'/>
+                <MDBInput label='Adresse mail' id='form2' type='email'/>
+              </div>
 
-				<Form.Group className="mb-3" controlId="formBasicBirthDate">
-					<Form.Control type="BirthDate" placeholder="Birth date" />
-				</Form.Group>
+              <div className="d-flex flex-row align-items-center mb-4">
+                <MDBIcon fas icon="lock me-3" size='lg'/>
+                <MDBInput label='Mot de passe' id='form3' type='password'/>
+              </div>
 
-				<Form.Group className="mb-3" controlId="formBasicPassword">
-					<Form.Control type="Password" placeholder="Password" />
-				</Form.Group>
+              <div className="d-flex flex-row align-items-center mb-4">
+                <MDBIcon fas icon="key me-3" size='lg'/>
+                <MDBInput label='Confirmer votre mot de passe' id='form4' type='password'/>
+              </div>
 
-				<Form.Group className="mb-3" controlId="formBasicConfirmedPassword">
-					<Form.Control
-						type="Confirm Password"
-						placeholder="Confirm Password"
-					/>
-				</Form.Group>
+              <div className='mb-4'>
+                <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Subscribe to our newsletter' />
+              </div>
 
-				<Form.Text>Choose your type</Form.Text>
+              <MDBBtn className='mb-4' size='lg'>Register</MDBBtn>
 
-				<Form.Check inline label="Table" name="group1" />
-				<Form.Check inline label="Chair" name="group1" />
-				<Form.Check inline label="Sofa" name="group1" />
-				<Form.Check inline label="Bed" name="group1" />
-				<Form.Check inline label="Cupboard" name="group1" />
-				<Form.Check inline label="Wardrobe" name="group1" />
-				<Form.Check inline label="Other" name="group1" />
+            </MDBCol>
 
-				<Button variant="primary" type="submit">
-					Push to complete
-				</Button>
-			</Form>
-			<Footer />
-		</>
-	);
+            <MDBCol md='10' lg='6' className='order-1 order-lg-2 d-flex align-items-center'>
+              <MDBCardImage src='https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp' fluid/>
+            </MDBCol>
+
+          </MDBRow>
+        </MDBCardBody>
+      </MDBCard>
+
+    </MDBContainer>
+	<Footer />
+	</>
+  );
 }
 
 export default SignUp;

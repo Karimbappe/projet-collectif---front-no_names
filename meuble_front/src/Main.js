@@ -10,7 +10,7 @@ const UsingFetch = () => {
   const [Object, setUsers] = useState([])
 
   const fetchData = () => {
-    fetch("http://localhost:8000/api/product")
+    fetch("http://localhost:8000/api/products/product")
       .then(response => {
         return response.json()
       })

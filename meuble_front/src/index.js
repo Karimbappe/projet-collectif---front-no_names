@@ -7,6 +7,8 @@ import SignIn from "./signIn";
 import SignUp from "./signUp"
 import {HashRouter, Routes, Route} from "react-router-dom";
 import Product from "./Product";
+import Category from "./Category";
+import Admin from "./Admin";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -17,7 +19,9 @@ root.render(
 				<Route index element={<App />} />
         {/* rajouter autant de "Route path" en les assignants a leurs fichier dans le dossier "src" */}
 				<Route path="/Product/:_id" element={<Product />} />
+				<Route path="/Category/:category" element={<Category />} />
 				<Route path="/sign-in" element={<SignIn />} />
+				<Route path="/Admin" element={<Admin />} />
 				<Route path="/sign-up" element={<SignUp />} /> 
 			</Routes>
 		</HashRouter>

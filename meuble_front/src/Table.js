@@ -1,34 +1,37 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import Navbar from './Navbar'
+import Footer from './Footer'
 import React, { useEffect, useState } from "react"
+import { useParams} from 'react-router-dom';
+
 import StripeCheckout from 'react-stripe-checkout'
 const Key = "pk_test_51M1adEFZdcSYeJDmXyZVoElE9XQKTGyWHN4RwfcOqrvBBOuXp29GBXHvwRSuHbpSvoQQHxKDL4UBlxbC5PqJMlv100bsUoabB2"
-
-
 
 //export default BasicExample;
 
 
-const UsingFetch = () => {
-  const [Object, setUsers] = useState([])
-
-  const fetchData = () => {
-    fetch("http://localhost:8000/api/products/product")
-      .then(response => {
-        return response.json()
-      })
-      .then(data => {
-        setUsers(data)
-      })
-  }
-
-  useEffect(() => {
-    fetchData()
-  }, [])
-
-  return (
-    <div class='cards_container' >
-      {Object.length > 0 && (
+const Table = () => {
+    const [Object, setUsers] = useState([])
+    const fetchData = () => {
+        fetch("http://localhost:8000/api/products/filter?category=Chaise")
+          .then(response => {
+            var data = response.json();
+            console.log(data)
+            return data
+          })
+          .then(data => {
+            setUsers(data)
+          })
+      }
+    
+      useEffect(() => {
+        fetchData()
+      }, [])
+    return <div>
+         <Navbar />
+         <div class='cards_container' >
+         {Object.length > 0 && (
         <div className='gridable'>
           {Object.map(Object => (
             <div>
@@ -36,6 +39,7 @@ const UsingFetch = () => {
                 <Card  href="/#/Product">
                 <Card.Link href={"/#/Product/" +  Object._id} ><Card.Img className='imgcart' variant="top" src={Object.image} /></Card.Link>
                   <Card.Body>
+                    <Card.Text>{Object._id}</Card.Text>
                   <Card.Title>{Object.name}</Card.Title>
                   <Card.Text>
                   {Object.description}
@@ -64,8 +68,11 @@ const UsingFetch = () => {
     </div>
     )
   }
-</div>
-)
+       
+        </div>
+        <Footer />
+       
+    </div>
 }
 
 
@@ -73,4 +80,4 @@ const UsingFetch = () => {
 
 
 
-export default UsingFetch
+export default Table

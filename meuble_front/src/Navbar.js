@@ -26,14 +26,15 @@ function NavScrollExample() {
 						<Nav.Link href="/#/App">Home</Nav.Link>
             <Nav.Link href="/#/App">About us</Nav.Link>
             <NavDropdown title="Produits" id="navbarScrollingDropdown">
-							<NavDropdown.Item href="#action2">Chaises</NavDropdown.Item>
-							<NavDropdown.Item href="#action3">Tables</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">Lits</NavDropdown.Item>
-              <NavDropdown.Item href="#action5">Armoires</NavDropdown.Item>
+							<NavDropdown.Item href="/#/Category/Chaises">Chaises</NavDropdown.Item>
+							<NavDropdown.Item href="/#/Category/Tables">Tables</NavDropdown.Item>
+              <NavDropdown.Item href="/#/Category/Lits">Lits</NavDropdown.Item>
+              <NavDropdown.Item href="/#/Category/Armoires">Armoires</NavDropdown.Item>
               </NavDropdown>
 						<NavDropdown title="Inscription" id="navbarScrollingDropdown">
 							<NavDropdown.Item href="/#/sign-in">Se connecter</NavDropdown.Item>
 							<NavDropdown.Item href="/#/sign-Up">Créer votre compte</NavDropdown.Item>
+							<NavDropdown.Item href="/#/Admin">Admin</NavDropdown.Item>
 							<NavDropdown.Divider />
 							<NavDropdown.Item href="#action6">
               Mot de passe oublié 

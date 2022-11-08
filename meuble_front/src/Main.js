@@ -34,8 +34,9 @@ const UsingFetch = () => {
             <div>
             <div className='cards_content'>
                 <Card  href="/#/Product">
-                <Card.Img className='imgcart' variant="top" src={Object.image} />
+                <Card.Link href={"/#/Product/" +  Object._id} ><Card.Img className='imgcart' variant="top" src={Object.image} /></Card.Link>
                   <Card.Body>
+                    <Card.Text>{Object._id}</Card.Text>
                   <Card.Title>{Object.name}</Card.Title>
                   <Card.Text>
                   {Object.description}
@@ -49,7 +50,7 @@ const UsingFetch = () => {
         billingAddress
         shippingAddress
        description='Your total is 1234€'
-        amount={10000}
+        amount={10000000}
         stripeKey={Key}
 
         > <Button variant="primary">Buy NOW !</Button>

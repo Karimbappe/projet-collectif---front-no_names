@@ -6,7 +6,7 @@ function Product() {
     return (
     <div>
         <Navbar />
-
+<div>Salut</div>
         
         <Footer />  
     </div>

@@ -15,23 +15,31 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import {useState} from "react";
 
-const initFormData = Object.freeze({
+const initFormData = Object({
 	//declaration de l'objet initiale pour recevoir les credentials
-	username: "",
+	email: "",
 	password: "",
 });
 
 const SignInForm = () => {
-	const [formData, updateFormData] = useState(initFormData);
+	//cette fonction englobe toute les function pour afficher et recuperer les credentials mais ne return que de l'html
+	const [formData, updateFormData] = useState(initFormData); //[formDat = etat actuel de la valeur, UpdateFormData = redirige vers une fonction pour update l'etat de la valeur] useState(qui prend l'object initFormData),
+
 	const handleChange = (elem) => {
+		// console.log(elem)
+		//cette fonction sert a map les credentials vers l'objet initFormData
+		// elem = formData
 		updateFormData({
-			...formData,
-			[elem.target.name]: elem.target.value.trim(),
+			...formData, // ... = spread operator pour combiner 2 objects entre eux ici initFormData et le formulaire remplis par l'utilisateur
+
+			[elem.target.name]: elem.target.value.trim(), //trim les espaces (ca n'a pas l'aire de fonctionner !!!)
 		});
 	};
 
 	const handleSubmit = (elem) => {
-		elem.preventDefault();
+		//elem = formDat
+		elem.preventDefault(); //methode servant a gerer les erreurs
+
 		console.log(formData); //submit formData to api @Karim
 	};
 
@@ -47,18 +55,29 @@ const SignInForm = () => {
 								lg="6"
 								className="order-2 order-lg-1 d-flex flex-column align-items-center"
 							>
-								<p classNAme="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
+								<p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
 									Se connecter
 								</p>
 
 								<div className="d-flex flex-row align-items-center mb-4">
-									<MDBIcon fas icon="envelope me-3" size="lg" />
-									<MDBInput label="Adresse mail" id="form2" type="email" />
+									<MDBInput
+										onChange={handleChange}
+										id="typeEmail"
+										type="email"
+										name="email"
+										placeholder="Email"
+									/>
 								</div>
 
 								<div className="d-flex flex-row align-items-center mb-4">
 									<MDBIcon fas icon="lock me-3" size="lg" />
-									<MDBInput label="Mot de passe" id="form3" type="password" />
+									<MDBInput
+										onChange={handleChange}
+										placeholder="Password"
+										id="form3"
+										type="password"
+										name="password"
+									/>
 								</div>
 
 								<div className="mb-4">
@@ -70,7 +89,7 @@ const SignInForm = () => {
 									/>
 								</div>
 
-								<MDBBtn className="mb-4" size="lg">
+								<MDBBtn className="mb-4" size="lg" onClick={handleSubmit}>
 									Se connecter
 								</MDBBtn>
 							</MDBCol>

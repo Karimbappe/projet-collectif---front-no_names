@@ -16,7 +16,7 @@ root.render(
 			<Routes>
 				<Route index element={<App />} />
         {/* rajouter autant de "Route path" en les assignants a leurs fichier dans le dossier "src" */}
-				<Route path="/Product" element={<Product />} />
+				<Route path="/Product/:_id" element={<Product />} />
 				<Route path="/sign-in" element={<SignIn />} />
 				<Route path="/sign-up" element={<SignUp />} /> 
 			</Routes>

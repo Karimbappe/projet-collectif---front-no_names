@@ -1,6 +1,9 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import React, { useEffect, useState } from "react"
+import StripeCheckout from 'react-stripe-checkout'
+const Key = "pk_test_51M1adEFZdcSYeJDmXyZVoElE9XQKTGyWHN4RwfcOqrvBBOuXp29GBXHvwRSuHbpSvoQQHxKDL4UBlxbC5PqJMlv100bsUoabB2"
+
 
 
 //export default BasicExample;
@@ -31,8 +34,9 @@ const UsingFetch = () => {
             <div>
             <div className='cards_content'>
                 <Card  href="/#/Product">
-                <Card.Img className='imgcart' variant="top" src={Object.image} />
+                <Card.Link href={"/#/Product/" +  Object._id} ><Card.Img className='imgcart' variant="top" src={Object.image} /></Card.Link>
                   <Card.Body>
+                    <Card.Text>{Object._id}</Card.Text>
                   <Card.Title>{Object.name}</Card.Title>
                   <Card.Text>
                   {Object.description}
@@ -40,7 +44,17 @@ const UsingFetch = () => {
                   <Card.Text>
                   {Object.price} € 
                   </Card.Text>
-                <Button variant="primary">Buy NOW !</Button>
+                  <StripeCheckout 
+        name="NoName" 
+        image= "https://image.shutterstock.com/image-vector/avatar-hacker-man-260nw-481229251.jpg"
+        billingAddress
+        shippingAddress
+       description='Your total is 1234€'
+        amount={10000000}
+        stripeKey={Key}
+
+        > <Button variant="primary">Buy NOW !</Button>
+        </StripeCheckout>
               </Card.Body>
               </Card>
             </div>

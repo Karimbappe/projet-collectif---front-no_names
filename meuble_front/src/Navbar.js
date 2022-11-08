@@ -12,7 +12,7 @@ function NavScrollExample() {
 				<Navbar.Brand href="#">
 					<img
 						className="logo"
-						src="/img/Capture d’écran 2022-11-02 à 17.21.17.png"
+						src="/img/Capture_d_écran_2022-11-02_à_17.21.17-removebg-preview.png"
 						alt="First slide"
 					/>
 				</Navbar.Brand>
@@ -23,8 +23,8 @@ function NavScrollExample() {
 						style={{maxHeight: "100px"}}
 						navbarScroll
 					>
-						<Nav.Link href="/#/App">Home</Nav.Link>
-            <Nav.Link href="/#/App">About us</Nav.Link>
+						<Nav.Link href="/#/">Home</Nav.Link>
+            <Nav.Link href="/#/App">Notre histoire</Nav.Link>
             <NavDropdown title="Produits" id="navbarScrollingDropdown">
 							<NavDropdown.Item href="/#/Category/Chaises">Chaises</NavDropdown.Item>
 							<NavDropdown.Item href="/#/Category/Tables">Tables</NavDropdown.Item>

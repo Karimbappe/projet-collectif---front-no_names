@@ -24,29 +24,30 @@ function NavScrollExample() {
 						navbarScroll
 					>
 						<Nav.Link href="/#/App">Home</Nav.Link>
-            <NavDropdown title="Products" id="navbarScrollingDropdown">
-							<NavDropdown.Item href="#action2">Chairs</NavDropdown.Item>
+            <Nav.Link href="/#/App">About us</Nav.Link>
+            <NavDropdown title="Produits" id="navbarScrollingDropdown">
+							<NavDropdown.Item href="#action2">Chaises</NavDropdown.Item>
 							<NavDropdown.Item href="#action3">Tables</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">Beds</NavDropdown.Item>
-              <NavDropdown.Item href="#action5">Stuff</NavDropdown.Item>
+              <NavDropdown.Item href="#action4">Lits</NavDropdown.Item>
+              <NavDropdown.Item href="#action5">Armoires</NavDropdown.Item>
               </NavDropdown>
 						<NavDropdown title="Inscription" id="navbarScrollingDropdown">
-							<NavDropdown.Item href="/#/sign-in">Sign in</NavDropdown.Item>
-							<NavDropdown.Item href="/#/sign-Up">Sign up</NavDropdown.Item>
+							<NavDropdown.Item href="/#/sign-in">Se connecter</NavDropdown.Item>
+							<NavDropdown.Item href="/#/sign-Up">Créer votre compte</NavDropdown.Item>
 							<NavDropdown.Divider />
 							<NavDropdown.Item href="#action6">
-								Forgot your password
+              Mot de passe oublié 
 							</NavDropdown.Item>
 						</NavDropdown>
 					</Nav>
 					<Form className="d-flex">
 						<Form.Control
 							type="search"
-							placeholder="Search"
+							placeholder="Je cherche un..."
 							className="me-2"
 							aria-label="Search"
 						/>
-						<Button variant="outline-success">Search</Button>
+						<Button variant="outline-success">Rechercher</Button>
 					</Form>
 				</Navbar.Collapse>
 			</Container>

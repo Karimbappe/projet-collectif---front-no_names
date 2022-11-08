@@ -43,6 +43,7 @@ body {
   grid-template-columns: 3fr 3fr 3fr;
   gap: 5rem;
   padding: 5rem;
+  align-items: stretch
 }
 
 .cards_content{
@@ -69,9 +70,13 @@ body {
 }
 
 
-.w-100{
+.fitHomePage{
   height: 300px;
   object-fit: cover;
+}
+
+.SignInFormaimg{
+  height: 540px !important;
 }
 
 .footer{
@@ -137,4 +142,20 @@ body {
   top: 30vh;
   left: 30vh;
   border: 5px solid #8b3c19;
+}
+
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+.h-custom {
+  height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+  .h-custom {
+  height: 100%;
+  }
 }

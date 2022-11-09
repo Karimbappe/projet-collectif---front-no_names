@@ -1,5 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import React, { useEffect, useState } from "react"
+import Card from "react-bootstrap/Card";
 import {
   MDBContainer,
   MDBCard,
@@ -7,8 +8,10 @@ import {
   MDBCardImage,
   MDBRipple,
 } from "mdb-react-ui-kit";
+import StripeCheckout from "react-stripe-checkout";
+const Key ="pk_test_51M1adEFZdcSYeJDmXyZVoElE9XQKTGyWHN4RwfcOqrvBBOuXp29GBXHvwRSuHbpSvoQQHxKDL4UBlxbC5PqJMlv100bsUoabB2";
 
-/*const Key = "pk_test_51M1adEFZdcSYeJDmXyZVoElE9XQKTGyWHN4RwfcOqrvBBOuXp29GBXHvwRSuHbpSvoQQHxKDL4UBlxbC5PqJMlv100bsUoabB2";*/
+
 
 
 
@@ -45,11 +48,11 @@ const UsingFetch = () => {
               rippleTag="div"
               className="bg-image rounded hover-zoom"
             >
-              <MDBCardImage
+           <Card.Link href={"/#/Product/" + Object._id}><MDBCardImage
                 src={Object.image}
                 fluid
                 className="w-100"
-              />
+              /></Card.Link>
               <a href="#!">
                 <div className="mask">
                   <div className="d-flex justify-content-start align-items-end h-100">
@@ -74,7 +77,15 @@ const UsingFetch = () => {
                 <p>{Object.category}</p>
               </a>
               <h6 className="mb-3">{Object.price}€</h6>
-              <Button variant="outline-success">J'achète</Button>
+              <StripeCheckout
+												name="NoName"
+												image="https://image.shutterstock.com/image-vector/avatar-hacker-man-260nw-481229251.jpg"
+												billingAddress
+												shippingAddress
+												description={"Your total is " + Object.price + "€"}
+												amount={Object.price * 100}
+												stripeKey={Key}>
+                        <Button variant="outline-success">J'achète</Button></StripeCheckout>
             </MDBCardBody>
           </MDBCard>
     </MDBContainer>

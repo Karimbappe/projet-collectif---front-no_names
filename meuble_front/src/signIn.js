@@ -14,7 +14,6 @@ import {
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import {useState} from "react";
-import Button from 'react-bootstrap/Button';
 
 
 const initFormData = Object({
@@ -106,7 +105,6 @@ const SignInForm = () => {
 									src='https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp'
 									fluid
 								/>
-								<Button variant="outline-success">Rechercher</Button>
 							</MDBCol>
 						</MDBRow>
 					</MDBCardBody>

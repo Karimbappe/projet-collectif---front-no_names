@@ -11,6 +11,7 @@ import Chaise from "./Chaise";
 import Armoire from "./Armoire";
 import Canape from "./Canape";
 import Lit from "./Lit";
+import Lampe from "./Lampe";
 import Table from "./Table";
 import Result from "./Result";
 
@@ -27,6 +28,7 @@ root.render(
 				<Route path="/Category/Chaise" element={<Chaise />} />
 				<Route path="/Category/Table" element={<Table />} />
 				<Route path="/Category/Armoire" element={<Armoire />} />
+				<Route path="/Category/Lampe" element={<Lampe />} />
 				<Route path="/Category/Lit" element={<Lit/>} />
 				<Route path="/Result/:category" element={<Result/>} />
 				<Route path="/Category/Canape" element={<Canape/>} />

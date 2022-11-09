@@ -30,7 +30,7 @@ function AboutUsForm() {
                 <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
                   A propos de nous..
                 </p>
-                <p className="text-justify h4 fw mb-5 mx-1 mx-md-4 mt-4 about">
+                <p className="text-justify h fw mb-5 mx-1 mx-md-4 mt-4 about">
                   Un puissant seigneur extrêmement riche et un pauvre paysan
                   avaient chacun un fils. Le puissant seigneur monta avec son
                   fils en haut d’une montagne, lui montra avec fierté le paysage
@@ -58,7 +58,7 @@ function AboutUsForm() {
               >
                 <MDBCardImage
                   className="AboutUsChair"
-                  src="https://pixabay.com/get/g2d19650b92013f34b1a91ee29a348e2a4ee360a921983f0e660d4a5aabd95d94d43983d17f25739ad91780a1c29ace7ce2f4fd1e9a5dffa2bfc2e8f558b99b8e72816ceb5572e2f6cb2aeb647b9dcded_1280.png"
+                  src='https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp'
                   fluid
                 />
               </MDBCol>

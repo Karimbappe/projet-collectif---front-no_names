@@ -35,7 +35,11 @@ function NavScrollExample(params) {
             navbarScroll
           >
             <Nav.Link href="/#/">Home</Nav.Link>
+<<<<<<< HEAD
             <Nav.Link href="/#/AboutUs">Notre histoire</Nav.Link>
+=======
+            <Nav.Link href="/#/App">Notre histoire</Nav.Link>
+>>>>>>> 94a4bd8c0a31d111285e6be9789487282b04417a
             <NavDropdown title="Produits" id="navbarScrollingDropdown">
               <NavDropdown.Item href="/#/Category/Chaises">
                 Chaises

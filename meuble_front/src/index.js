@@ -7,10 +7,13 @@ import SignIn from "./signIn";
 import SignUp from "./signUp";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Product from "./Product";
-import Category from "./Category";
-import Admin from "./Admin";
+import Chaise from "./Chaise";
+import Armoire from "./Armoire";
+import Canape from "./Canape";
+import Lit from "./Lit";
+import Table from "./Table";
 import Result from "./Result";
-import AboutUs from "./AboutUs";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -20,16 +23,18 @@ root.render(
       <Routes>
         <Route index element={<App />} />
         {/* rajouter autant de "Route path" en les assignants a leurs fichier dans le dossier "src" */}
-        <Route path="/Product/:_id" element={<Product />} />
-        <Route path="/Category/:category" element={<Category />} />
-        <Route path="/sign-in" element={<SignIn />} />
-        <Route path="/Admin" element={<Admin />} />
-        <Route path="/Result/:query" element={<Result />} />
-        <Route path="/sign-up" element={<SignUp />} />
-        <Route path="/AboutUs" element={<AboutUs />} />
-      </Routes>
-    </HashRouter>
-  </React.StrictMode>
+				<Route path="/Product/:_id" element={<Product />} />
+				<Route path="/Category/Chaise" element={<Chaise />} />
+				<Route path="/Category/Table" element={<Table />} />
+				<Route path="/Category/Armoire" element={<Armoire />} />
+				<Route path="/Category/Lit" element={<Lit/>} />
+				<Route path="/Result/:category" element={<Result/>} />
+				<Route path="/Category/Canape" element={<Canape/>} />
+				<Route path="/sign-in" element={<SignIn />} />
+				<Route path="/sign-up" element={<SignUp />} /> 
+			</Routes>
+		</HashRouter>
+	</React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -59,8 +59,6 @@ function Product() {
       <Footer />
     </div>
   );
-
-  
 }
 
 export default Product;

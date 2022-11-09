@@ -8,6 +8,19 @@ body {
   flex-direction: column;
 }
 
+.card{
+  height: 550px !important;
+  border-radius: 30px;
+}
+
+.card-text{
+  display: none;
+}
+
+.SignInFormaimg{
+  margin-top: 130px;
+}
+
 .topnav {
   overflow: hidden;
   background-color: #b6371a;
@@ -58,11 +71,11 @@ body {
   display: contents;
 }
 
-.p-card
 
 .gridable img{
-  object-fit: cover;
+  object-fit: contain;
   width: 100%;
+  height: 300px;
 }
 
 .cards_content:hover{
@@ -78,16 +91,13 @@ body {
   object-fit: cover;
 }
 
-.SignInFormaimg{
-  height: 540px !important;
-}
 
 .footer{
   color: #f2ede0;
   margin-top: 1rem;
   padding: 1rem;
   background: linear-gradient(0.25turn,#8b3c19, #b55822, #df742b);
-  height: 4rem;
+  height: 6rem;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -135,6 +145,10 @@ body {
 
 .logo{
   height: 30px;
+}
+
+.radius{
+  border-radius: 30px;
 }
 
 .signInContent {

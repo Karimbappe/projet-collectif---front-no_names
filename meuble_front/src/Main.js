@@ -40,9 +40,8 @@ const UsingFetch = () => {
                     />
                   </Card.Link>
                   <Card.Body>
-                    <Card.Text>{Object._id}</Card.Text>
                     <Card.Title>{Object.name}</Card.Title>
-                    <Card.Text>{Object.description}</Card.Text>
+                    {/* <Card.Text>{Object.description}</Card.Text> */}
                     <Card.Text>{Object.price} €</Card.Text>
                     <StripeCheckout
                       name="NoName"

@@ -35,20 +35,16 @@ function NavScrollExample(params) {
             navbarScroll
           >
             <Nav.Link href="/#/">Home</Nav.Link>
-<<<<<<< HEAD
             <Nav.Link href="/#/AboutUs">Notre histoire</Nav.Link>
-=======
-            <Nav.Link href="/#/App">Notre histoire</Nav.Link>
->>>>>>> 94a4bd8c0a31d111285e6be9789487282b04417a
             <NavDropdown title="Produits" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="/#/Category/Chaises">
+              <NavDropdown.Item href="/#/Category/Chaise">
                 Chaises
               </NavDropdown.Item>
-              <NavDropdown.Item href="/#/Category/Tables">
+              <NavDropdown.Item href="/#/Category/Table">
                 Tables
               </NavDropdown.Item>
-              <NavDropdown.Item href="/#/Category/Lits">Lits</NavDropdown.Item>
-              <NavDropdown.Item href="/#/Category/Armoires">
+              <NavDropdown.Item href="/#/Category/Lit">Lits</NavDropdown.Item>
+              <NavDropdown.Item href="/#/Category/Armoire">
                 Armoires
               </NavDropdown.Item>
             </NavDropdown>

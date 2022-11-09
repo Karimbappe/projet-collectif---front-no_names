@@ -14,6 +14,8 @@ import {
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import {useState} from "react";
+import Button from 'react-bootstrap/Button';
+
 
 const initFormData = Object({
 	//declaration de l'objet initiale pour recevoir les credentials
@@ -101,9 +103,10 @@ const SignInForm = () => {
 							>
 								<MDBCardImage
 									className="SignInFormaimg"
-									src="https://pixabay.com/get/g2d19650b92013f34b1a91ee29a348e2a4ee360a921983f0e660d4a5aabd95d94d43983d17f25739ad91780a1c29ace7ce2f4fd1e9a5dffa2bfc2e8f558b99b8e72816ceb5572e2f6cb2aeb647b9dcded_1280.png"
+									src='https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp'
 									fluid
 								/>
+								<Button variant="outline-success">Rechercher</Button>
 							</MDBCol>
 						</MDBRow>
 					</MDBCardBody>

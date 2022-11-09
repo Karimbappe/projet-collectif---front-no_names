@@ -1,50 +1,58 @@
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 import Navbar from './Navbar'
 import Footer from './Footer'
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 import React, { useEffect, useState } from "react"
-import { useParams} from 'react-router-dom';
+import {useParams} from 'react-router-dom'
+import StripeCheckout from "react-stripe-checkout";
+const Key ="pk_test_51M1adEFZdcSYeJDmXyZVoElE9XQKTGyWHN4RwfcOqrvBBOuXp29GBXHvwRSuHbpSvoQQHxKDL4UBlxbC5PqJMlv100bsUoabB2";
 
-import StripeCheckout from 'react-stripe-checkout'
-const Key = "pk_test_51M1adEFZdcSYeJDmXyZVoElE9XQKTGyWHN4RwfcOqrvBBOuXp29GBXHvwRSuHbpSvoQQHxKDL4UBlxbC5PqJMlv100bsUoabB2"
+const Result = () => {
+    const params = useParams(); // This retrieves all the params defined for the url 
+    const paramsUrl = useParams();
 
-//export default BasicExample;
+    console.log(paramsUrl.query); 
 
-
-const Category = () => {
-    const [Object, setUsers] = useState([])
-    const fetchData = () => {
-        fetch("http://localhost:8000/api/products/filter?category=Chaise")
+    const [Result, setResults] = useState([])
+    const fetchData = async () => {
+        fetch("http://localhost:8000/api/products/filter?name=" + paramsUrl.query)
           .then(response => {
-            var data = response.json();
+          var data = response.json();
             console.log(data)
             return data
           })
           .then(data => {
-            setUsers(data)
+            if (data.length == 0){
+              console.log("was not found")
+            }else{
+              setResults(data)
+            }
           })
+          
       }
+
     
       useEffect(() => {
         fetchData()
       }, [])
     return <div>
          <Navbar />
+         <h1> Search Results for : {params.query} </h1>
          <div class='cards_container' >
-         {Object.length > 0 && (
+         {Result.length > 0 && (
         <div className='gridable'>
-          {Object.map(Object => (
+          {Result.map(Result => (
             <div>
             <div className='cards_content'>
                 <Card  href="/#/Product">
-                <Card.Link href={"/#/Product/" +  Object._id} ><Card.Img className='imgcart' variant="top" src={Object.image} /></Card.Link>
+                <Card.Link href={"/#/Product/" +  Result._id} ><Card.Img className='imgcart' variant="top" src={Result.image} /></Card.Link>
                   <Card.Body>
-                  <Card.Title>{Object.name}</Card.Title>
+                  <Card.Title>{Result.name}</Card.Title>
                   <Card.Text>
-                  {Object.color}
+                  {Result.description}
                   </Card.Text>
                   <Card.Text>
-                  {Object.price} € 
+                  {Result.price} € 
                   </Card.Text>
                   <StripeCheckout 
         name="NoName" 
@@ -75,8 +83,4 @@ const Category = () => {
 }
 
 
-
-
-
-
-export default Category
+export default Result

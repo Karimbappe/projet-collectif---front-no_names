@@ -4,8 +4,26 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import React, { useEffect, useState } from "react"
+import {Link} from "react-router-dom"
 
-function NavScrollExample() {
+
+function NavScrollExample(params) {
+	
+	
+	const [message, setMessage] = useState('');
+
+	const handleChange = event => {
+	  setMessage(event.target.value);
+  
+	  let result = ( event.target.value);
+	  console.log(result);
+
+	};
+
+
+
+
 	return (
 		<Navbar bg="light" expand="lg">
 			<Container fluid>
@@ -47,8 +65,12 @@ function NavScrollExample() {
 							placeholder="Je cherche un..."
 							className="me-2"
 							aria-label="Search"
+							onChange={handleChange}
+                           value={message}
 						/>
-						<Button variant="outline-success">Rechercher</Button>
+
+					 <Button  href= {"/#/Result/" + message}  variant="outline-success">Rechercher</Button>
+						<div className="dataResult"> </div>
 					</Form>
 				</Navbar.Collapse>
 			</Container>

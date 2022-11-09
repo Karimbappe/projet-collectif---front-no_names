@@ -9,6 +9,7 @@ import {HashRouter, Routes, Route} from "react-router-dom";
 import Product from "./Product";
 import Category from "./Category";
 import Admin from "./Admin";
+import Result from "./Result";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -22,6 +23,7 @@ root.render(
 				<Route path="/Category/:category" element={<Category />} />
 				<Route path="/sign-in" element={<SignIn />} />
 				<Route path="/Admin" element={<Admin />} />
+				<Route path="/Result/:query" element={<Result />} />
 				<Route path="/sign-up" element={<SignUp />} /> 
 			</Routes>
 		</HashRouter>

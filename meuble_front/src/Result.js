@@ -23,7 +23,7 @@ const Result = () => {
 				return data;
 			})
 			.then((data) => {
-				if (data.length == 0) {
+				if (data.length === 0) {
 					console.log("was not found");
 				} else {
 					setResults(data);

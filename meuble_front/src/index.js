@@ -14,6 +14,8 @@ import Lit from "./Lit";
 import Lampe from "./Lampe";
 import Table from "./Table";
 import Result from "./Result";
+import AboutUs from "./AboutUs";
+
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -33,7 +35,8 @@ root.render(
 				<Route path="/Result/:category" element={<Result/>} />
 				<Route path="/Category/Canape" element={<Canape/>} />
 				<Route path="/sign-in" element={<SignIn />} />
-				<Route path="/sign-up" element={<SignUp />} /> 
+				<Route path="/sign-up" element={<SignUp />} />
+				<Route path="/AboutUs" element={<AboutUs />} /> 
 			</Routes>
 		</HashRouter>
 	</React.StrictMode>

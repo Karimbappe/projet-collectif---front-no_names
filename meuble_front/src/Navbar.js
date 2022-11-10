@@ -50,6 +50,9 @@ function NavScrollExample(params) {
               <NavDropdown.Item href="/#/Category/Lampe">
               Lampe
               </NavDropdown.Item>
+              <NavDropdown.Item href="/#/Category/Canape">
+                Canapé
+              </NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Inscription" id="navbarScrollingDropdown">
               <NavDropdown.Item href="/#/sign-in">

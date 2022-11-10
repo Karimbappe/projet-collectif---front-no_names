@@ -40,44 +40,43 @@ const UsingFetch = () => {
         <div className="gridable">
           {Object.map((Object) => (
             <div>
-            <div className='cards_content'>
-            <MDBContainer fluid className="my-5 text-center">
-          <MDBCard>
-            <MDBRipple
-              rippleColor="light"
-              rippleTag="div"
-              className="bg-image rounded hover-zoom"
-            >
-           <Card.Link href={"/#/Product/" + Object._id}><MDBCardImage
-                src={Object.image}
-                fluid
-                className="w-100"
-              /></Card.Link>
-              <a href="#!">
-                <div className="mask">
-                  <div className="d-flex justify-content-start align-items-end h-100">
-                    <h5>
-                      <span className="badge bg-primary ms-2">Nouveauté</span>
-                    </h5>
-                  </div>
-                </div>
-                <div className="hover-overlay">
-                  <div
-                    className="mask"
-                    style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
-                  ></div>
-                </div>
-              </a>
-            </MDBRipple>
-            <MDBCardBody>
-              <a href="#!" className="text-reset">
-                <h5 className="card-title mb-3">{Object.name}</h5>
-              </a>
-              <a href="#!" className="text-reset">
-                <p>{Object.category}</p>
-              </a>
-              <h6 className="mb-3">{Object.price}€</h6>
-              <StripeCheckout
+              <div className='cards_content'>
+              <MDBContainer fluid className="my-5 text-center">
+                <MDBCard>
+                  <MDBRipple
+                  rippleColor="light"
+                  rippleTag="div"
+                  className="bg-image rounded">
+                    <Card.Link href={"/#/Product/" + Object._id}><MDBCardImage
+                    src={Object.image}
+                    fluid
+                    className="w-100"/>
+                    </Card.Link>
+                    <a href="#!">
+                      <div className="mask">
+                        <div className="d-flex justify-content-start align-items-end h-100">
+                          <h5>
+                            <span className="badge bg-primary ms-2">Nouveauté</span>
+                          </h5>
+                        </div>
+                      </div>
+                      <div className="hover-overlay">
+                        <div
+                          className="mask"
+                          style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}>
+                        </div>
+                      </div>
+                    </a>
+                </MDBRipple>
+              <MDBCardBody>
+                <a href="#!" className="text-reset">
+                  <h5 className="card-title mb-3">{Object.name}</h5>
+                </a>
+                <a href="#!" className="text-reset">
+                  <p>{Object.category}</p>
+                </a>
+                <h6 className="mb-3">{Object.price}€</h6>
+                  <StripeCheckout
 												name="NoName"
 												image="https://image.shutterstock.com/image-vector/avatar-hacker-man-260nw-481229251.jpg"
 												billingAddress
@@ -85,18 +84,19 @@ const UsingFetch = () => {
 												description={"Your total is " + Object.price + "€"}
 												amount={Object.price * 100}
 												stripeKey={Key}>
-                        <Button variant="outline-success">J'achète</Button></StripeCheckout>
-            </MDBCardBody>
-          </MDBCard>
-    </MDBContainer>
+                        <Button variant="outline-success">J'achète</Button>
+                    </StripeCheckout>
+                  </MDBCardBody>
+                </MDBCard>
+              </MDBContainer>
             </div>
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
-    )
-  }
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
+  )
+}
 
 
 export default UsingFetch

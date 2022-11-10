@@ -79,11 +79,6 @@ const SignUpForm = () => {
 										onChange={(e) => setuserName(e.target.value)}
 									/>
 								</div>
-
-              <div className='mb-4'>
-                <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label="S'abonner à la NewsLetter" />
-              </div>
-
 								<div className="d-flex flex-row align-items-center mb-4">
 									<MDBIcon fas icon="lock me-3" size="lg" />
 									<MDBInput

@@ -54,7 +54,7 @@ body {
   display: grid;
   grid-template-columns: 3fr 3fr 3fr;
   gap: 5rem;
-  padding: 5rem;
+  padding: 1rem 5rem 5rem 5rem;
   align-items: stretch;
 }
 
@@ -86,6 +86,10 @@ body {
 .fitHomePage {
   height: 300px;
   object-fit: cover;
+}
+
+.priceProductCard{
+  font-size: 30px;
 }
 
 .SignInFormaimg {

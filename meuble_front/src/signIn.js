@@ -15,7 +15,6 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import {useState} from "react";
 
-
 const initFormData = Object({
 	//declaration de l'objet initiale pour recevoir les credentials
 	email: "",
@@ -102,7 +101,7 @@ const SignInForm = () => {
 							>
 								<MDBCardImage
 									className="SignInFormaimg"
-									src='https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp'
+									src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
 									fluid
 								/>
 							</MDBCol>

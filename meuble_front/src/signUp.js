@@ -37,7 +37,7 @@ const SignUpForm = () => {
 
 	const handleSubmit = async (elem) => {
 		elem.preventDefault();
-		let res = await fetch("localhost:8020/api/auth/register", {
+		let res = await fetch("localhost:8000/api/auth/register", {
 			method: "POST",
 			crossDomain: true,
 			body: {

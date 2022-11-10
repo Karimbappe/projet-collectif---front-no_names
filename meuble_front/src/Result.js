@@ -16,7 +16,9 @@ const Result = () => {
 
 	const [Result, setResults] = useState([]);
 	const fetchData = async () => {
-		fetch("http://localhost:8000/api/products/filter?name=" + paramsUrl.category)
+		fetch(
+			"http://localhost:8000/api/products/filter?name=" + paramsUrl.category
+		)
 			.then((response) => {
 				var data = response.json();
 				console.log(data);

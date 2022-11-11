@@ -1,26 +1,26 @@
 import Carousel from "react-bootstrap/Carousel";
 
 function UncontrolledExample() {
-	return (
-		<div className="carousel_container">
-			<Carousel>
-				<Carousel.Item>
-					<img
-						className="d-block w-100 fitHomePage"
-						src="img/sidekix-media-WgkA3CSFrjc-unsplash.jpg"
-						alt="First slide"
-					/>
-					<Carousel.Caption>
-						<h3>Mid-century Modern, Columbus, Indiana</h3>
-						<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-					</Carousel.Caption>
-				</Carousel.Item>
-				<Carousel.Item>
-					<img
-						className="d-block w-100 fitHomePage"
-						src="img/sidekix-media-0sDzRgrN_pI-unsplash.jpg"
-						alt="Second slide"
-					/>
+return (
+    <div className='carousel_container'>
+    <Carousel>
+        <Carousel.Item>
+        <img
+            className="d-block w-100 fitHomePage"
+            src="img/000c13ca-ae03-4adf-838b-025d0bcac331_deco-cosy.jpeg"
+            alt="First slide"
+        />
+        <Carousel.Caption>
+            <h3>Mid-century Modern, Columbus, Indiana</h3>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+        <img
+            className="d-block w-100 fitHomePage"
+            src="img/amenager-salon-acceuillant-canape-homesalons.jpeg"
+            alt="Second slide"
+        />
 
 					<Carousel.Caption>
 						<h3>Drawing room at the Harewood House</h3>

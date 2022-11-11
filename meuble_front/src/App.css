@@ -9,16 +9,20 @@ body {
 }
 
 .card{
-  height: 550px !important;
   border-radius: 30px;
 }
-
+      
 .card-text{
   display: none;
 }
 
 .SignInFormaimg{
   margin-top: 100px;
+}
+
+.researchTitle{
+  color: #8b3c19;
+  padding: 1rem 1rem 1rem 1rem;
 }
 
 .topnav {

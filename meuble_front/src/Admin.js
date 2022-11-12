@@ -13,8 +13,41 @@ import {
 } from "mdb-react-ui-kit";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import {useState} from "react";
+import Button from 'react-bootstrap/Button';
+import { useNavigate } from "react-router-dom";
 
-function Admin() {
+
+
+const Admin= () => {
+
+	const [email, setEmail] = useState("")
+	const [password, setPassword] = useState("")
+	const [token, setToken] = useState("")
+	const navigate =useNavigate()
+
+
+	const handleLogin = async () => {
+		console.warn({email,password})
+		let result = await fetch("http://localhost:8000/api/auth/login", {
+        method: 'post',
+        body: JSON.stringify({email, password }),
+        headers: {
+          'Content-Type': 'application/json',
+
+        }
+      })
+	  result=result.json()
+      console.warn(result)
+	  if(result){
+		localStorage.setItem("user",JSON.stringify(result))
+      navigate('/')
+	  }else{
+		alert("incorrect passord or email please try again")
+	  }
+	}
+
+
 	return (
 		<>
 			<Navbar />
@@ -27,18 +60,42 @@ function Admin() {
 								lg="6"
 								className="order-2 order-lg-1 d-flex flex-column align-items-center"
 							>
-								<p classNAme="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
+								<p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
 									Se connecter
 								</p>
 
 								<div className="d-flex flex-row align-items-center mb-4">
-									<MDBIcon fas icon="envelope me-3" size="lg" />
-									<MDBInput label="Adresse mail" id="form2" type="email" />
+									<MDBInput
+										id="typeEmail"
+										type="email"
+										name="email"
+										placeholder="Email"
+										value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+									/>
 								</div>
 
 								<div className="d-flex flex-row align-items-center mb-4">
 									<MDBIcon fas icon="lock me-3" size="lg" />
-									<MDBInput label="Mot de passe" id="form3" type="password" />
+									<MDBInput
+										placeholder="Password"
+										id="form3"
+										type="password"
+										name="password"
+										value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+									/>
+								</div>
+								<div className="d-flex flex-row align-items-center mb-4">
+									<MDBIcon fas icon="lock me-3" size="lg" />
+									<MDBInput
+										placeholder="Token"
+										id="form3"
+										type="text"
+										name="token"
+										value={token}
+                    onChange={(e) => setToken(e.target.value)}
+									/>
 								</div>
 
 								<div className="mb-4">
@@ -50,7 +107,7 @@ function Admin() {
 									/>
 								</div>
 
-								<MDBBtn className="mb-4" size="lg">
+								<MDBBtn className="mb-4" size="lg" onClick={handleLogin} >
 									Se connecter
 								</MDBBtn>
 							</MDBCol>
@@ -62,7 +119,7 @@ function Admin() {
 							>
 								<MDBCardImage
 									className="SignInFormaimg"
-									src="https://pixabay.com/get/g2d19650b92013f34b1a91ee29a348e2a4ee360a921983f0e660d4a5aabd95d94d43983d17f25739ad91780a1c29ace7ce2f4fd1e9a5dffa2bfc2e8f558b99b8e72816ceb5572e2f6cb2aeb647b9dcded_1280.png"
+									src='https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp'
 									fluid
 								/>
 							</MDBCol>
@@ -73,6 +130,6 @@ function Admin() {
 			<Footer />
 		</>
 	);
-}
+};
 
 export default Admin;

@@ -5,7 +5,8 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import SignIn from "./signIn";
 import SignUp from "./signUp";
-import {HashRouter, Routes, Route} from "react-router-dom";
+import Admin from "./Admin";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Product from "./Product";
 import Chaise from "./Chaise";
 import Armoire from "./Armoire";
@@ -33,8 +34,8 @@ root.render(
 				<Route path="/Result/:category" element={<Result />} />
 				<Route path="/Category/Canape" element={<Canape />} />
 				<Route path="/sign-in" element={<SignIn />} />
-				<Route path="/sign-up" element={<SignUp />} />
-				<Route path="/AboutUs" element={<AboutUs />} />
+				<Route path="/sign-up" element={<SignUp />} /> 
+				<Route path="/Admin" element={<Admin />} /> 
 			</Routes>
 		</HashRouter>
 	</React.StrictMode>

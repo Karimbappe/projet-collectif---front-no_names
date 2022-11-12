@@ -16,76 +16,84 @@ function NavScrollExample(params) {
 		console.log(result);
 	};
 
-	return (
-		<Navbar bg="light" expand="lg">
-			<Container fluid>
-				<Navbar.Brand href="#">
-					<img
-						className="logo"
-						src="/img/Capture_d_écran_2022-11-02_à_17.21.17-removebg-preview.png"
-						alt="First slide"
-					/>
-				</Navbar.Brand>
-				<Navbar.Toggle aria-controls="navbarScroll" />
-				<Navbar.Collapse id="navbarScroll">
-					<Nav
-						className="me-auto my-2 my-lg-0"
-						style={{maxHeight: "100px"}}
-						navbarScroll
-					>
-						<Nav.Link href="/#/">Home</Nav.Link>
-						<Nav.Link href="/#/AboutUs">Notre histoire</Nav.Link>
-						<NavDropdown title="Produits" id="navbarScrollingDropdown">
-							<NavDropdown.Item href="/#/Category/Chaise">
-								Chaises
-							</NavDropdown.Item>
-							<NavDropdown.Item href="/#/Category/Table">
-								Tables
-							</NavDropdown.Item>
-							<NavDropdown.Item href="/#/Category/Lit">Lits</NavDropdown.Item>
-							<NavDropdown.Item href="/#/Category/Armoire">
-								Armoires
-							</NavDropdown.Item>
-							<NavDropdown.Item href="/#/Category/Lampe">
-								Lampe
-							</NavDropdown.Item>
-							<NavDropdown.Item href="/#/Category/Canape">
-								Canapé
-							</NavDropdown.Item>
-						</NavDropdown>
-						<NavDropdown title="Inscription" id="navbarScrollingDropdown">
-							<NavDropdown.Item href="/#/sign-in">
-								Se connecter
-							</NavDropdown.Item>
-							<NavDropdown.Item href="/#/sign-Up">
-								Créer votre compte
-							</NavDropdown.Item>
-							<NavDropdown.Item href="/#/Admin">Admin</NavDropdown.Item>
-							<NavDropdown.Divider />
-							<NavDropdown.Item href="#action6">
-								Mot de passe oublié
-							</NavDropdown.Item>
-						</NavDropdown>
-					</Nav>
-					<Form className="d-flex">
-						<Form.Control
-							type="search"
-							placeholder="Je cherche un..."
-							className="me-2"
-							aria-label="Search"
-							onChange={handleChange}
-							value={message}
-						/>
+  return (
+    <Navbar bg="light" expand="lg">
+      <Container fluid>
+        <Navbar.Brand href="#">
+          <img
+            className="logo"
+            src="/img/Capture_d_écran_2022-11-02_à_17.21.17-removebg-preview.png"
+            alt="First slide"
+          />
+        </Navbar.Brand>
+	
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav
+            className="me-auto my-2 my-lg-0"
+            style={{ maxHeight: "100px" }}
+            navbarScroll
+          >
+            <Nav.Link href="/#/">Home</Nav.Link>
+            <Nav.Link href="/#/AboutUs">Notre histoire</Nav.Link>
+            <NavDropdown title="Produits" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="/#/Category/Chaise">
+                Chaises
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/#/Category/Table">
+                Tables
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/#/Category/Lit">Lits</NavDropdown.Item>
+              <NavDropdown.Item href="/#/Category/Armoire">
+                Armoires
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/#/Category/Lampe">
+              Lampe
+              </NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="Inscription" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="/#/sign-in">
+                Se connecter
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/#/sign-Up">
+                Créer votre compte
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/#/Admin">Admin</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action6">
+                Mot de passe oublié
+              </NavDropdown.Item>
+            </NavDropdown>
+            <Nav.Link>
+		  <img
+            className="logo"
+            src="/img/cart.png"
+            alt="First slide"
+          />
+		  </Nav.Link>
+		
+          </Nav>
+		
+          <Form className="d-flex">
+            <Form.Control
+              type="search"
+              placeholder="Je cherche un..."
+              className="me-2"
+              aria-label="Search"
+              onChange={handleChange}
+              value={message}
+            />
 
-						<Button href={"/#/Result/" + message} variant="outline-success">
-							Rechercher
-						</Button>
-						<div className="dataResult"> </div>
-					</Form>
-				</Navbar.Collapse>
-			</Container>
-		</Navbar>
-	);
+            <Button href={"/#/Result/" + message} variant="outline-success">
+              Rechercher
+            </Button>
+            <div className="dataResult"> </div>
+          </Form>
+		 
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
 }
 
 export default NavScrollExample;

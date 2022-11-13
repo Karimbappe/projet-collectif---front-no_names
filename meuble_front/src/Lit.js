@@ -2,13 +2,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import {
-    MDBContainer,
-    MDBCard,
-    MDBCardBody,
-    MDBCardImage,
-    MDBRipple,
-  } from "mdb-react-ui-kit";
+
 import React, {useEffect, useState} from "react";
 import {
 	MDBContainer,

@@ -36,10 +36,13 @@ const SignInForm = () => {
 
         }
       })
-	  result=result.json()
-      console.warn(result)
+	  
+
 	  if(result){
-		localStorage.setItem("user",JSON.stringify(result))
+		result= await result.json()
+		console.warn(result)
+		localStorage.setItem("user",(JSON.stringify(result)))
+		localStorage.setItem("token",( JSON.stringify(result.accessToken)))
       navigate('/')
 	  }else{
 		alert("incorrect passord or email please try again")

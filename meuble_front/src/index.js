@@ -16,6 +16,9 @@ import Lampe from "./Lampe";
 import Table from "./Table";
 import Result from "./Result";
 import AboutUs from "./AboutUs";
+import AddProduct from "./AddProduct";
+import ProductList from "./ProductList";
+import UsersList from "./UsersList";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -36,6 +39,10 @@ root.render(
 				<Route path="/sign-in" element={<SignIn />} />
 				<Route path="/sign-up" element={<SignUp />} /> 
 				<Route path="/Admin" element={<Admin />} /> 
+				<Route path="/ProductList" element={<ProductList />} /> 
+				<Route path="/UserList" element={<UsersList />} /> 
+				<Route path="/AddProduct" element={<AddProduct />} /> 
+				<Route path="/AboutUs" element={<AboutUs />} /> 
 			</Routes>
 		</HashRouter>
 	</React.StrictMode>

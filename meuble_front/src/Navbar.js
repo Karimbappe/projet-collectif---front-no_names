@@ -5,6 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import React, {useState} from "react";
+import {useNavigate } from "react-router-dom";
 
 function NavScrollExample(params) {
 	const [message, setMessage] = useState("");
@@ -15,6 +16,28 @@ function NavScrollExample(params) {
 		let result = event.target.value;
 		console.log(result);
 	};
+ 
+    const auth = localStorage.getItem('user')
+     
+    const navigate =useNavigate()
+    const logout = ()=>{
+      localStorage.clear(auth)
+      navigate('./sign-Up')
+
+    }
+let token =localStorage.getItem("token")
+let button ;
+console.log(token)
+    if(token){
+      let admin = JSON.parse(auth).isAdmin
+    console.log(JSON.parse(auth).isAdmin)
+  if (admin){
+    button =<NavDropdown.Item href="/#/Admin">Admin</NavDropdown.Item>
+  }else{
+    button =<NavDropdown.Item >Not Admin</NavDropdown.Item>
+  }
+    }
+    
 
   return (
     <Navbar bg="light" expand="lg">
@@ -50,6 +73,9 @@ function NavScrollExample(params) {
               <NavDropdown.Item href="/#/Category/Lampe">
               Lampe
               </NavDropdown.Item>
+              <NavDropdown.Item href="/#/AddProduct">
+              Add Product
+              </NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Inscription" id="navbarScrollingDropdown">
               <NavDropdown.Item href="/#/sign-in">
@@ -58,19 +84,14 @@ function NavScrollExample(params) {
               <NavDropdown.Item href="/#/sign-Up">
                 Créer votre compte
               </NavDropdown.Item>
-              <NavDropdown.Item href="/#/Admin">Admin</NavDropdown.Item>
+              {button}
+              <NavDropdown.Item href="/#/sign-Up" onClick={logout}>Logout</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action6">
                 Mot de passe oublié
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link>
-		  <img
-            className="logo"
-            src="/img/cart.png"
-            alt="First slide"
-          />
-		  </Nav.Link>
+            
 		
           </Nav>
 		

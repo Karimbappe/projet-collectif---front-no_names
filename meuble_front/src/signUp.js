@@ -39,9 +39,9 @@ const SignUpForm = () => {
 
         }
       })
-      result=result.json()
-      console.warn(result)
-      localStorage.setItem("user",JSON.stringify(result))
+      result= await result.json()
+      console.warn("hemm",result)
+     localStorage.setItem("user",JSON.stringify(result))
       navigate('/')
 
     }

@@ -19,6 +19,7 @@ import AboutUs from "./AboutUs";
 import AddProduct from "./AddProduct";
 import ProductList from "./ProductList";
 import UsersList from "./UsersList";
+import Review from "./Reviews";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -43,6 +44,7 @@ root.render(
 				<Route path="/UserList" element={<UsersList />} /> 
 				<Route path="/AddProduct" element={<AddProduct />} /> 
 				<Route path="/AboutUs" element={<AboutUs />} /> 
+				<Route path="/Review/:_id" element={<Review />} /> 
 			</Routes>
 		</HashRouter>
 	</React.StrictMode>

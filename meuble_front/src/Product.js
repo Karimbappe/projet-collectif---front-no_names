@@ -9,6 +9,7 @@ import {
 	MDBCard,
 	MDBCardBody,
 	MDBCardImage,
+	MDBCardLink,
 } from "mdb-react-ui-kit";
 import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
@@ -82,6 +83,7 @@ function Product() {
 								<MDBCardImage src={Product.image} fluid />
 							</MDBCol>
 						</MDBRow>
+						<MDBCardLink href={"/#/Review/" + Product._id}>Reviews</MDBCardLink>
 					</MDBCardBody>
 				</MDBCard>
 			</MDBContainer>

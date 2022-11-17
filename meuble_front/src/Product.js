@@ -1,11 +1,18 @@
-//import React from 'react'
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
+// import Button from "react-bootstrap/Button";
+// import Card from "react-bootstrap/Card";
+import {
+  MDBCard,
+  MDBCardTitle,
+  MDBCardText,
+  MDBCardBody,
+  MDBCardImage,
+  MDBRow,
+  MDBCol
+} from 'mdb-react-ui-kit';
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-//import StripeCheckout from 'react-stripe-checkout'
 
 function Product() {
   const paramsUrl = useParams();
@@ -35,30 +42,59 @@ function Product() {
   return (
     <div>
       <Navbar />
-      <div className="cards_container card_product">
-        <div>
-          <div className="cards_content">
-            <Card href="/#/Product">
-              <Card.Link href={"/#/Product/" + Product._id}>
-                <Card.Img
-                  className="imgcart"
-                  variant="top"
-                  src={Product.image}
-                />
-              </Card.Link>
-              <Card.Body>
-                <Card.Title>{Product.name}</Card.Title>
-                <Card.Text>{Product.description}</Card.Text>
-                <Card.Text>{Product.price} €</Card.Text>
-              </Card.Body>
-            </Card>
-          </div>
-        </div>
-      </div>
-
+      <MDBCard style={{ maxWidth: '540px' }}>
+        <MDBRow className='g-10'>
+          <MDBCol md="10"
+								lg="6"
+								className="order-lg-2 d-flex align-items-center">
+            <MDBCardImage src={Product.image} alt='...' fluid />
+          </MDBCol>
+          <MDBCol md='8'>
+            <MDBCardBody>
+              <MDBCardTitle>{Product.name}</MDBCardTitle>
+              <p>
+              <MDBCardText>
+              {Product.description}
+              </MDBCardText>
+              </p>
+              <MDBCardText>
+                <small className='text-muted'>{Product.price} €</small>
+              </MDBCardText>
+            </MDBCardBody>
+          </MDBCol>
+        </MDBRow>
+      </MDBCard>
       <Footer />
     </div>
   );
+
 }
 
 export default Product;
+
+     {/* <div className="cards_container card_product">
+  //       <div>
+  //         <div className="cards_content">
+  //           <Card href="/#/Product">
+  //             <Card.Link href={"/#/Product/" + Product._id}>
+  //               <Card.Img
+  //                 className="imgcart"
+  //                 variant="top"
+  //                 src={Product.image}
+  //               />
+  //             </Card.Link>
+  //             <Card.Body>
+  //               <Card.Title>{Product.name}</Card.Title>
+  //               <Card.Text>{Product.description}</Card.Text>
+  //               <Card.Text>{Product.price} €</Card.Text>
+  //             </Card.Body>
+  //           </Card>
+  //         </div>
+  //       </div>
+  //     </div>
+
+  //     <Footer />
+  //   </div>
+  // ); */}
+
+

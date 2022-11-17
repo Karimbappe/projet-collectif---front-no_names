@@ -4,18 +4,40 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, {useState} from "react";
+import {useNavigate } from "react-router-dom";
 
 function NavScrollExample(params) {
-  const [message, setMessage] = useState("");
+	const [message, setMessage] = useState("");
 
-  const handleChange = (event) => {
-    setMessage(event.target.value);
+	const handleChange = (event) => {
+		setMessage(event.target.value);
 
-    let result = event.target.value;
-    console.log(result);
-  };
+		let result = event.target.value;
+		console.log(result);
+	};
+ 
+    const auth = localStorage.getItem('user')
+     
+    const navigate =useNavigate()
+    const logout = ()=>{
+      localStorage.clear(auth)
+      navigate('./sign-Up')
+
+    }
+let token =localStorage.getItem("token")
+let button ;
+console.log(token)
+    if(token){
+      let admin = JSON.parse(auth).isAdmin
+    console.log(JSON.parse(auth).isAdmin)
+  if (admin){
+    button =<NavDropdown.Item href="/#/Admin">Admin</NavDropdown.Item>
+  }else{
+    button =<NavDropdown.Item >Not Admin</NavDropdown.Item>
+  }
+    }
+    
 
   return (
     <Navbar bg="light" expand="lg">
@@ -27,6 +49,7 @@ function NavScrollExample(params) {
             alt="First slide"
           />
         </Navbar.Brand>
+	
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -50,6 +73,9 @@ function NavScrollExample(params) {
               <NavDropdown.Item href="/#/Category/Lampe">
               Lampe
               </NavDropdown.Item>
+              <NavDropdown.Item href="/#/AddProduct">
+              Add Product
+              </NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Inscription" id="navbarScrollingDropdown">
               <NavDropdown.Item href="/#/sign-in">
@@ -58,13 +84,17 @@ function NavScrollExample(params) {
               <NavDropdown.Item href="/#/sign-Up">
                 Créer votre compte
               </NavDropdown.Item>
-              <NavDropdown.Item href="/#/Admin">Admin</NavDropdown.Item>
+              {button}
+              <NavDropdown.Item href="/#/sign-Up" onClick={logout}>Logout</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action6">
                 Mot de passe oublié
               </NavDropdown.Item>
             </NavDropdown>
+            
+		
           </Nav>
+		
           <Form className="d-flex">
             <Form.Control
               type="search"
@@ -80,6 +110,7 @@ function NavScrollExample(params) {
             </Button>
             <div className="dataResult"> </div>
           </Form>
+		 
         </Navbar.Collapse>
       </Container>
     </Navbar>

@@ -15,35 +15,40 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import {useState} from "react";
 import Button from 'react-bootstrap/Button';
+import { useNavigate } from "react-router-dom";
 
 
-const initFormData = Object({
-	//declaration de l'objet initiale pour recevoir les credentials
-	email: "",
-	password: "",
-});
 
 const SignInForm = () => {
-	//cette fonction englobe toute les function pour afficher et recuperer les credentials mais ne return que de l'html
-	const [formData, updateFormData] = useState(initFormData); //[formDat = etat actuel de la valeur, UpdateFormData = redirige vers une fonction pour update l'etat de la valeur] useState(qui prend l'object initFormData),
 
-	const handleChange = (elem) => {
-		// console.log(elem)
-		//cette fonction sert a map les credentials vers l'objet initFormData
-		// elem = formData
-		updateFormData({
-			...formData, // ... = spread operator pour combiner 2 objects entre eux ici initFormData et le formulaire remplis par l'utilisateur
+	const [email, setEmail] = useState("")
+	const [password, setPassword] = useState("")
+	const navigate =useNavigate()
 
-			[elem.target.name]: elem.target.value.trim(), //trim les espaces (ca n'a pas l'aire de fonctionner !!!)
-		});
-	};
 
-	const handleSubmit = (elem) => {
-		//elem = formDat
-		elem.preventDefault(); //methode servant a gerer les erreurs
+	const handleLogin = async () => {
+		console.warn({email,password})
+		let result = await fetch("http://localhost:8000/api/auth/login", {
+        method: 'post',
+        body: JSON.stringify({email, password }),
+        headers: {
+          'Content-Type': 'application/json',
 
-		console.log(formData); //submit formData to api @Karim
-	};
+        }
+      })
+	  
+
+	  if(result){
+		result= await result.json()
+		console.warn(result)
+		localStorage.setItem("user",(JSON.stringify(result)))
+		localStorage.setItem("token",( JSON.stringify(result.accessToken)))
+      navigate('/')
+	  }else{
+		alert("incorrect passord or email please try again")
+	  }
+	}
+
 
 	return (
 		<>
@@ -63,22 +68,24 @@ const SignInForm = () => {
 
 								<div className="d-flex flex-row align-items-center mb-4">
 									<MDBInput
-										onChange={handleChange}
 										id="typeEmail"
 										type="email"
 										name="email"
 										placeholder="Email"
+										value={email}
+                    onChange={(e) => setEmail(e.target.value)}
 									/>
 								</div>
 
 								<div className="d-flex flex-row align-items-center mb-4">
 									<MDBIcon fas icon="lock me-3" size="lg" />
 									<MDBInput
-										onChange={handleChange}
 										placeholder="Password"
 										id="form3"
 										type="password"
 										name="password"
+										value={password}
+                    onChange={(e) => setPassword(e.target.value)}
 									/>
 								</div>
 
@@ -91,7 +98,7 @@ const SignInForm = () => {
 									/>
 								</div>
 
-								<MDBBtn className="mb-4" size="lg" onClick={handleSubmit}>
+								<MDBBtn className="mb-4" size="lg" onClick={handleLogin} >
 									Se connecter
 								</MDBBtn>
 							</MDBCol>
@@ -103,10 +110,9 @@ const SignInForm = () => {
 							>
 								<MDBCardImage
 									className="SignInFormaimg"
-									src='https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp'
+									src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
 									fluid
 								/>
-								<Button variant="outline-success">Rechercher</Button>
 							</MDBCol>
 						</MDBRow>
 					</MDBCardBody>

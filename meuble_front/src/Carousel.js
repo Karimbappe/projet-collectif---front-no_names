@@ -1,4 +1,4 @@
-import Carousel from 'react-bootstrap/Carousel';
+import Carousel from "react-bootstrap/Carousel";
 
 function UncontrolledExample() {
 return (
@@ -7,7 +7,7 @@ return (
         <Carousel.Item>
         <img
             className="d-block w-100 fitHomePage"
-            src="img/sidekix-media-WgkA3CSFrjc-unsplash.jpg"
+            src="img/000c13ca-ae03-4adf-838b-025d0bcac331_deco-cosy.jpeg"
             alt="First slide"
         />
         <Carousel.Caption>
@@ -18,32 +18,30 @@ return (
         <Carousel.Item>
         <img
             className="d-block w-100 fitHomePage"
-            src="img/sidekix-media-0sDzRgrN_pI-unsplash.jpg"
+            src="img/amenager-salon-acceuillant-canape-homesalons.jpeg"
             alt="Second slide"
         />
 
-        <Carousel.Caption>
-            <h3>Drawing room at the Harewood House</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-        <img
-            className="d-block w-100 fitHomePage"
-            src="img/spacejoy-c0JoR_-2x3E-unsplash.jpg"
-            alt="Third slide"
-        />
+					<Carousel.Caption>
+						<h3>Drawing room at the Harewood House</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+					</Carousel.Caption>
+				</Carousel.Item>
+				<Carousel.Item>
+					<img
+						className="d-block w-100 fitHomePage"
+						src="img/spacejoy-c0JoR_-2x3E-unsplash.jpg"
+						alt="Third slide"
+					/>
 
-        <Carousel.Caption>
-            <h3>California tract home living room</h3>
-            <p>
-            with a kitchen behind a permanent space divider, 1960.
-            </p>
-        </Carousel.Caption>
-        </Carousel.Item>
-    </Carousel>
-    </div>
-    );
+					<Carousel.Caption>
+						<h3>California tract home living room</h3>
+						<p>with a kitchen behind a permanent space divider, 1960.</p>
+					</Carousel.Caption>
+				</Carousel.Item>
+			</Carousel>
+		</div>
+	);
 }
 
 export default UncontrolledExample;

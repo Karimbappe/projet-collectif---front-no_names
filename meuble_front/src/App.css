@@ -9,16 +9,20 @@ body {
 }
 
 .card{
-  height: 550px !important;
   border-radius: 30px;
 }
-
-/* .card-text{
+      
+.card-text{
   display: none;
 } */
 
 .SignInFormaimg{
-  margin-top: 130px;
+  margin-top: 100px;
+}
+
+.researchTitle{
+  color: #8b3c19;
+  padding: 1rem 1rem 1rem 1rem;
 }
 
 .topnav {
@@ -54,7 +58,7 @@ body {
   display: grid;
   grid-template-columns: 3fr 3fr 3fr;
   gap: 5rem;
-  padding: 5rem;
+  padding: 1rem 5rem 5rem 5rem;
   align-items: stretch;
 }
 
@@ -88,8 +92,26 @@ body {
   object-fit: cover;
 }
 
+.priceProductCard{
+  font-size: 30px;
+}
+
 .SignInFormaimg {
   margin-top: 100px;
+}
+.product-list{
+  text-align: center;
+  margin: top 50px;
+}
+.product-list ul{
+  margin:0px
+}
+.product-list ul li {
+  display:inline-block;
+  width:150px;
+  border:1px solid rgb(228, 114, 7);
+  padding:5px;
+  background-color: white;
 }
 
 .AboutUsChair {

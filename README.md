@@ -3,6 +3,8 @@ No Name
 
 No Name est un site de e-commerce développé avec ReactJs et NodeJS. Il vous permet d'acheter des meubles de qualité supérieure à des prix abordables.
 
+stack : HTML, CSS, JSX, ReactJS, ReactBoostrap
+
 Fonctionnalités
 
 - Catalogue de produits avec des images de haute qualité et des détails complets

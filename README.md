@@ -12,6 +12,16 @@ Fonctionnalités
 - Interface conviviale et responsive pour une expérience d'achat agréable sur tous les appareils
 - Administration des produits et utilisateurs
 
+
+
+![NN](https://user-images.githubusercontent.com/78148549/212689798-a442d15e-590b-456a-a650-b8bb1c4f18da.gif)
+
+
+![Screenshot from 2022-12-23 00-26-28](https://user-images.githubusercontent.com/78148549/212689859-a191944e-7b4e-4ce6-b6b1-313bd5bfa0e5.png)
+
+
+
+
 Notions abordées
 
 - Déploiement web
